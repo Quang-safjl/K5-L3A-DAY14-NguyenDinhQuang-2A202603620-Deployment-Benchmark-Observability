@@ -17,6 +17,7 @@ RUN groupadd -r agent && useradd -r -g agent -d /app agent
 
 WORKDIR /app
 
+ENV PYTHONUSERBASE=/home/agent/.local PATH=/home/agent/.local/bin:$PATH
 COPY --from=builder /root/.local /home/agent/.local
 COPY app/ ./app/
 COPY utils/ ./utils/
