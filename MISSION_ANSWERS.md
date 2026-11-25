@@ -564,8 +564,6 @@ Một số chi tiết từ output: image 273 MB (< 500 MB), build 28 s; rate lim
 - **Giải thích khái niệm** cho Part 1–5 và Part 7 (câu 3–10, 14–17). Mình dùng làm ý tham khảo và **tự viết lại** câu trả lời trong `MISSION_ANSWERS.md` bằng lời của mình.
 - **Review code, không viết hộ** (câu 11–13): AI đọc `rate_limiter.py` và `Dockerfile` trên GitHub rồi chỉ ra chỗ cần kiểm tra. AI không sinh code cho các file trong `06-lab-complete/`.
 - **Đọc số liệu của chính mình**: AI dùng số trong `benchmark-results/scale_1_stats.csv` và `BENCHMARK_REPORT.md` để minh họa (avg 216.94 ms, p95 250 ms, p99 1700 ms). Mọi số liệu trong báo cáo đều do mình đo.
-- **Kiểm tra trước khi nộp** (câu 18): AI phát hiện `06-lab-complete/app/main.py` trên GitHub vẫn là bản khung (còn TODO, chỉ có route `/ask`) và `MISSION_ANSWERS.md` còn trống nhiều mục.
-
 ### 3. Mình đã kiểm chứng và xử lý thế nào
 
 Tôi không nộp nguyên kết quả AI đưa ra mà tự chạy lại và đối chiếu:
