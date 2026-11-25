@@ -40,7 +40,7 @@ File: `06-lab-complete/benchmark-observability/develop/reports/load_v2_c{1,10,50
 | 0.03 (mặc định) | 244.0 | 232.0 | 1680.5 | 37.33 |
 | 0.1 | 353.4 | 1692.7 | 1709.0 | 26.08 |
 
-File: `reports/load_v2_slow0.json`, `reports/load_v2_slow003.json`, `reports/load_v2_slow01.json`
+File: `reports/load_v2_slow_0.json`, `reports/load_v2_slow_0.03.json`, `reports/load_v2_slow_0.1.json`
 
 **Chỉ số nào nhạy nhất với request chậm?** Percentile đuôi. Với 3% request chậm, chỉ **p99** nhảy (224 → 1680 ms, ×7.5) vì 3% < 5% nên p95 chưa bị ảnh hưởng. Với 10% request chậm, **p95** tăng ×7.8 (218 → 1693 ms) và vi phạm SLO. Trong khi đó **avg** chỉ tăng ×1.3 rồi ×1.85 và **p50 gần như không đổi**.
 
