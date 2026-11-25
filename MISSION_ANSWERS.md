@@ -568,12 +568,14 @@ Một số chi tiết từ output: image 273 MB (< 500 MB), build 28 s; rate lim
 
 ### 3. Mình đã kiểm chứng và xử lý thế nào
 
-<!-- Điền đúng những gì bạn đã thực sự làm; xóa dòng nào không đúng -->
-- Chạy lại `python check_production_ready.py` trong WSL2 để xác nhận kết quả: `____ /12`.
-- Push các file Part 6 còn thiếu: `____`.
-- Chạy lại 4 lệnh curl trên URL deploy (200 / 200 / 401 / 200).
-- Chạy `git log --all --oneline -- '*.env' '.env'`: không có output.
-- Đối chiếu số trong `BENCHMARK_REPORT.md` với các file JSON/CSV.
+Tôi không nộp nguyên kết quả AI đưa ra mà tự chạy lại và đối chiếu:
+
+- [x] **Code Part 6:** tự chạy `python check_production_ready.py` bản đầy đủ (có Docker) trên máy (WSL2) → **PASS 12/12, 44/44 checks**; chạy thêm `--public-url` với URL Railway → `GET /health → 200`.
+- [x] **Bản deploy Railway:** tự gọi URL public bằng curl → `/health` 200, `/ready` 200 (`"redis":"ok"`), `/ask` không key → 401, có key → 200, gọi liên tục → 429 sau 10 request.
+- [x] **Số liệu Part 7:** mọi con số trong `BENCHMARK_REPORT.md` lấy từ output tôi tự chạy (`load_test.py`, `run_eval.py`, Locust headless) và khớp với file trong `reports/` và `benchmark-results/`; thời gian alert firing tôi tự ghi khi theo dõi Prometheus.
+- [x] **Screenshots:** tự chụp trên máy (Railway, Grafana, Jaeger, Prometheus); trace ID trong log JSON (`b1690f5b...`) tôi tự tra trên Jaeger và khớp với trace.
+- [x] **Part 1–5:** các output curl/docker trong `MISSION_ANSWERS.md` là kết quả chạy thật trên máy tôi (script do AI viết, tôi chạy trong Ubuntu); kích thước image (1 667.8 MB → 239.8 MB) đo bằng `docker images`.
+- [x] **Bảo mật:** kiểm tra `git log --all -- '*.env' '.env'` không có kết quả; token JWT trong bài đã được che (`<TOKEN_REDACTED>`); `AGENT_API_KEY` chỉ đặt trên Railway, không có trong repo.
 
 ### 4. Đánh giá
 

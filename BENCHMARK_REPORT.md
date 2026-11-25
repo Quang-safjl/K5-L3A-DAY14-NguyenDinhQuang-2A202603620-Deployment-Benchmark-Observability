@@ -166,7 +166,7 @@ Log, trace và instance khớp nhau: cùng `trace_id`, cùng `instance=6c91be696
 
 **Trace chậm**
 
-- **Trace ID:** `cc260aa…` (lấy đầy đủ từ URL Jaeger)
+- **Trace ID:** `cc260aa` (ID rút gọn Jaeger hiển thị ở tiêu đề trace, xem `screenshots/jaeger-slow-trace.png`)
 - **Tổng thời gian:** 1.7 s
 - **Span chậm nhất:** `chat mock-llm-small` 1.7 s (**~99.9%**); phần xử lý riêng của agent ~2 ms. → Nút thắt hoàn toàn ở LLM; giảm tail latency phải xử lý ở tầng LLM (timeout + retry, cache, streaming, model nhanh hơn).
 
